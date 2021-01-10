@@ -1,0 +1,36 @@
+@import './variables.scss';
+
+.layout {
+  position: relative;
+  .side {
+    overflow: auto;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    .logo {
+      height: $base-header-height;
+    }
+  }
+  .right {
+    margin-left: $base-side-width;
+    .header {
+      padding: 0 $base-padding;
+      background: $base-menu-background;
+      height: $base-header-height;
+      display: flex;
+      align-items: center;
+      .toggle-btn {
+        font-size: 16px;
+        color: $base-color-white;
+        cursor: pointer;
+        &:hover {
+          color: $base-color-default;
+        }
+      }
+    }
+  }
+  .side-collapsed {
+    margin-left: $base-fold-side-width;
+  }
+}

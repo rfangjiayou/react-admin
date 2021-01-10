@@ -1,0 +1,121 @@
+@import './variables.scss';
+
+@mixin scrollbar {
+  max-height: 88vh;
+  // margin-bottom: 0.5vh;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(144, 147, 153, 0.3);
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(144, 147, 153, 0.3);
+  }
+}
+
+@mixin base-scrollbar {
+  &::-webkit-scrollbar {
+    width: 12px;
+    height: 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    background-clip: padding-box;
+    border: 3px solid transparent;
+    border-radius: 7px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-track:hover {
+    background-color: #f8fafc;
+  }
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-size: $base-font-size-default;
+    color: $base-font-color;
+    background: $base-color-bg;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    @include base-scrollbar;
+
+    div {
+      @include base-scrollbar;
+    }
+  }
+}
+
+a {
+  color: $base-color-blue;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+  padding: 0;
+  transition: $base-transition;
+}
+
+svg {
+  transition: none;
+  * {
+    transition: none;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+img{
+	max-width: 100%;
+}
+
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+.fold-side-bar {
+  width: $base-fold-side-width !important;
+}
+.fold {
+  margin-left: $base-fold-side-width !important;
+}
+
+.clearfix {
+  &:before, &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both
+  }
+}
