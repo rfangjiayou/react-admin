@@ -28,6 +28,13 @@
           color: $base-color-default;
         }
       }
+      .user-setting {
+        margin-left: auto;
+        &-dropdown {
+          margin-left: 10px;
+          color: $base-color-white;
+        }
+      }
     }
   }
   .side-collapsed {
