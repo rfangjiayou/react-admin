@@ -11,13 +11,13 @@ const { Content } = Layout
 
 class BaseLayout extends Component {
   render() {
-    const { menuToggle } = this.props
+    const { menuToggle, headerFixed } = this.props
     return (
       <Layout className="layout">
         <Side />
         <Layout className={`right ${menuToggle ? 'side-collapsed' : null}`}>
           <Header />
-          <Content>
+          <Content className={`${headerFixed ? 'header-fix-main' : null}`}>
             <Switch>
               {
                 routes.map(item => {
@@ -45,7 +45,8 @@ class BaseLayout extends Component {
 }
 
 const mapStateToProps = state => ({
-  menuToggle: state.layout.menuToggle
+  menuToggle: state.layout.menuToggle,
+  headerFixed: state.layout.headerFixed
 })
 
 export default withRouter(

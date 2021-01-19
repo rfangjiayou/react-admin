@@ -51,6 +51,16 @@ class Side extends Component {
     })
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.menuToggle !== this.props.menuToggle) {
+      const { pathname } = this.props.location
+      this.setState({
+        selectedKeys: [pathname],
+        openKeys: this.getOpenKeys(pathname)
+      })
+    }
+  }
+
   getOpenKeys = (path) => {
     const tmpArr = path.split('/').slice(1).map(e => `/${e}`)
     const found = this.menus.find(e => e.path === tmpArr[0])

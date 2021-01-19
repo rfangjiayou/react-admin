@@ -16,25 +16,37 @@
     margin-left: $base-side-width;
     .header {
       padding: 0 $base-padding;
-      background: $base-menu-background;
+      background: $base-color-white;
       height: $base-header-height;
       display: flex;
       align-items: center;
       .toggle-btn {
-        font-size: 16px;
-        color: $base-color-white;
+        font-size: 18px;
         cursor: pointer;
         &:hover {
           color: $base-color-default;
         }
       }
-      .user-setting {
+      .fix-switch {
         margin-left: auto;
+      }
+      .user-setting {
+        margin-left: 20px;
         &-dropdown {
           margin-left: 10px;
-          color: $base-color-white;
         }
       }
+    }
+    .header-fix {
+      position: fixed;
+      top: 0;
+      width: calc(100% - #{$base-side-width});
+    }
+    .side-collapsed-header {
+      width: calc(100% - #{$base-fold-side-width});
+    }
+    .header-fix-main {
+      margin-top: $base-header-height;
     }
   }
   .side-collapsed {
